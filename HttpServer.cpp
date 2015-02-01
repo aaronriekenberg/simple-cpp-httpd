@@ -8,10 +8,15 @@
 #include <microhttpd.h>
 #include "HttpServer.h"
 
-namespace simple_cpp_httpd
+namespace
 {
 
 const size_t POST_BUFFER_SIZE = 1024;
+
+}
+
+namespace simple_cpp_httpd
+{
 
 class HttpServerImpl
 {
