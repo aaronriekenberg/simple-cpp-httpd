@@ -5,7 +5,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace simple_cpp_http
+namespace simple_cpp_httpd
 {
 
 typedef std::function<std::string()> GetHandler;

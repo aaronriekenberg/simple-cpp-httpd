@@ -8,7 +8,7 @@
 #include <microhttpd.h>
 #include "HttpServer.h"
 
-namespace simple_cpp_http
+namespace simple_cpp_httpd
 {
 
 const size_t POST_BUFFER_SIZE = 512;

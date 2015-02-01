@@ -13,11 +13,11 @@ int main(int argc, char** argv)
      <input type=\"submit\" value=\" Send \"></form>\
      </body></html>";
 
-  simple_cpp_http::HttpServer server;
+  simple_cpp_httpd::HttpServer server;
   server.addGetHandler("/", [=]() { return rootHTML; });
   server.addPostHandler(
     "/namepost",
-    [](simple_cpp_http::PostKeysAndValues& postKeysAndValues) 
+    [](simple_cpp_httpd::PostKeysAndValues& postKeysAndValues) 
     {
       std::stringstream ss;
       ss << "<html><body><h1>Welcome, " << (postKeysAndValues["name"]) << "</h1></body></html>";
