@@ -174,7 +174,9 @@ private:
         (void*)(responseString.c_str()),
         MHD_RESPMEM_MUST_COPY);
     if (!response)
+    {
       return MHD_NO;
+    }
 
     const int ret = MHD_queue_response (connection, responseType, response);
     MHD_destroy_response (response);
@@ -184,7 +186,7 @@ private:
   struct PostConnectionInfo
   {
     PostKeysAndValues postKeysAndValues;
-    MHD_PostProcessor *postProcessor = 0;
+    MHD_PostProcessor* postProcessor = 0;
 
     ~PostConnectionInfo()
     {
