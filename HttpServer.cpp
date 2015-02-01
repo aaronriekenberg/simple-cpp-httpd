@@ -86,7 +86,7 @@ private:
   }
 
   static int requestCompleted(void *cls, struct MHD_Connection *connection,
-                               void **con_cls, enum MHD_RequestTerminationCode toe)
+                              void **con_cls, enum MHD_RequestTerminationCode toe)
   {
     PostConnectionInfo* pConnectionInfo = static_cast<PostConnectionInfo*>(*con_cls);
     delete pConnectionInfo;
