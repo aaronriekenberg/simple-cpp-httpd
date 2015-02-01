@@ -11,7 +11,7 @@
 namespace simple_cpp_httpd
 {
 
-const size_t POST_BUFFER_SIZE = 512;
+const size_t POST_BUFFER_SIZE = 1024;
 
 class HttpServerImpl
 {
@@ -97,13 +97,13 @@ private:
   int handleGet(MHD_Connection* connection, const std::string& url)
   {
     auto iter = m_urlToGetHandler.find(url);
-    if (iter != m_urlToGetHandler.end())
+    if (iter == m_urlToGetHandler.end())
     {
-      const std::string response = (iter->second)();
-      return returnResponse(connection, response);
+      return returnResponse(connection, "Unknown GET location", MHD_HTTP_NOT_FOUND);
     }
 
-    return returnResponse(connection, "Unknown GET location", MHD_HTTP_NOT_FOUND);
+    const std::string response = (iter->second)();
+    return returnResponse(connection, response);
   }
 
   static int iteratePost(void *coninfo_cls, enum MHD_ValueKind kind, const char *key,
