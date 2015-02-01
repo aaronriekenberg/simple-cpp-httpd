@@ -1,0 +1,2 @@
+HttpServer.o: HttpServer.cpp HttpServer.h
+Main.o: Main.cpp HttpServer.h
