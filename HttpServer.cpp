@@ -96,7 +96,7 @@ private:
 
   int handleGet(MHD_Connection* connection, const std::string& url)
   {
-    auto iter = m_urlToGetHandler.find(std::string(url));
+    auto iter = m_urlToGetHandler.find(url);
     if (iter != m_urlToGetHandler.end())
     {
       const std::string response = (iter->second)();
