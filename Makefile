@@ -1,6 +1,6 @@
 CXX = c++
-CXXFLAGS = -g -Wall -pthread
-LDFLAGS = -pthread -lmicrohttpd
+CXXFLAGS = -g -Wall -pthread -I/usr/local/include
+LDFLAGS = -pthread -L/usr/local/lib -lmicrohttpd
 SRC = HttpServer.cpp Main.cpp
 OBJS=${SRC:.cpp=.o}
 

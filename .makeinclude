@@ -1,2 +1,2 @@
-HttpServer.o: HttpServer.cpp HttpServer.h
+HttpServer.o: HttpServer.cpp /usr/local/include/microhttpd.h HttpServer.h
 Main.o: Main.cpp HttpServer.h
