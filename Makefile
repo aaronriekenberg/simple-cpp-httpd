@@ -1,5 +1,5 @@
-CXX = g++
-CXXFLAGS = -std=c++11 -g -Wall -pthread
+CXX = c++
+CXXFLAGS = -g -Wall -pthread
 LDFLAGS = -pthread -lmicrohttpd
 SRC = HttpServer.cpp Main.cpp
 OBJS=${SRC:.cpp=.o}

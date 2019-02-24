@@ -23,8 +23,10 @@ int main(int argc, char** argv)
       ss << "<html><body><h1>Welcome, " << (postKeysAndValues["name"]) << "</h1></body></html>";
       return ss.str();
     });
-  server.start(8888);
-  std::cout << "started server" << std::endl;
+
+  const int port = 8888;
+  server.start(port);
+  std::cout << "started server on port " << port << std::endl;
 
   getchar();
 

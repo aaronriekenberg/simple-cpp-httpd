@@ -45,7 +45,7 @@ public:
   void start(int port)
   {
     m_pDaemon = MHD_start_daemon (
-      MHD_USE_EPOLL_INTERNALLY_LINUX_ONLY | MHD_USE_DUAL_STACK,
+      MHD_USE_EPOLL_INTERNALLY | MHD_USE_DUAL_STACK,
       port, 0, 0,
       &HttpServerImpl::handleRequest, this,
       MHD_OPTION_NOTIFY_COMPLETED, &HttpServerImpl::requestCompleted, this,
